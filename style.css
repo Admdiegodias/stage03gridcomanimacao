@@ -1,0 +1,357 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --ff-heading: 'staatliches', sans-serif;
+    --ff-texting: 'palanquin', sans-serif;
+    --ff-hdg-:'Roboto', sans-serif;
+
+    font-size: 62.5%;
+    --fs-body: 1.6rem;
+    --fs-heading: 4rem;
+    --fs-mainfrase: 2.2rem;
+    --fs-headingh1: 5rem;
+
+    --bg-heading: #8E9AAF;
+    
+    /* --fs-heading: clamp:(4rem, 1rem + 5vw, 5.6rem);*/
+    /*--fs-heading-sm: clamp(3rem, 0.5rem + 3vw, 4rem);*/
+  }
+
+  @media (max-width: 700px) /*significa que até 700px vai ser mobile*/ {
+
+  body {
+    font-family: var(--ff-texting);
+    font-size: var(--fs-body);
+  }
+
+  .page{
+    max-width: 38.4rem;
+    height: 100%;
+    margin: 0 auto;
+    background: #EFF1FF;
+  }
+
+  main{
+    display: flex;
+    flex-direction: column;
+    margin: auto 3.2rem;
+  
+    gap: 3rem;
+    }
+
+    main div:nth-child(5){
+
+      margin-bottom: 6rem;
+    }
+
+  main .frase {
+    display: flex;
+    width: 30.5rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 4.3rem 6.3rem 0;
+    padding-left: 30px;
+    font-size: var(--fs-mainfrase);
+    text-align: justify;
+    display: block;
+  }
+
+  header p {
+    display: none;
+  }
+
+  main p {
+    width: 30.5rem;
+    height: 7.5rem;
+    color: #23053A;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Palanquin';
+    line-height: 1.5rem;
+    
+  }
+
+  header {
+    width: 38.4rem;
+    height: 27.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-heading);
+  }
+
+  header img {
+    width: 13.7rem;
+    height: 13.7rem;
+    margin-top: 3.2rem;
+  }
+
+  header h1 {
+    background-color: #CBC0D3;
+
+    width: 38.4rem;
+    height: 4.9rem;
+
+    font-size: 4.0rem;
+    font-weight: 800;
+    font-family: var(--ff-heading);
+    letter-spacing: 2px;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 4rem;
+    margin-bottom: 3.6rem;
+
+    color: white;
+  }
+
+  header h1:hover {
+    color: rgba(255, 255, 255, 0.63);
+  }
+
+  .card {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+  }
+
+  .card h2{
+    font-family: "staatliches";
+    color: #4A4E69;
+    position: absolute;
+    top:1.7rem;
+    right: 3.9rem;
+    background-color: #FEEAFA;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    letter-spacing: 1px;
+    animation: topdown 700ms 700ms backwards;
+  }
+
+  .card img{
+    width: 32rem;
+    padding: 0 3.2rem;
+    animation: downtop 700ms 350ms backwards;
+  }
+
+    @keyframes topdown{
+      0%{
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+    
+      100%{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes downtop {
+      0%{
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }  
+
+    footer {
+      display: none; /*para não aparecer o footer no mobile*/
+    }
+  } /*aqui fecha o max-width*/
+
+  @media (min-width: 700px) {
+    .page {
+      max-width: 128rem;
+      height: 72rem;
+
+      display: flex;
+      
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 3px;
+
+      padding-top: 6.4rem;
+      padding-left: 9.5rem;
+      padding-bottom: 50rem;
+      
+      grid-template-areas: 
+      'sorvete1 sorvete2 sorvete3' 
+      'sorvete4 sorvete5 sorvete6';
+
+    }
+
+    main div:nth-child(2) {
+      grid-area: sorvete1;
+      
+    }
+
+    main div:nth-child(3) {
+      grid-area: sorvete2;
+      position: absolute;
+      padding-left: 19rem;
+      
+    }
+
+    main div:nth-child(4) {
+      grid-area: sorvete3;
+      position: absolute;
+      padding-left: 38rem;
+    }
+
+    main div:nth-child(5) {
+      grid-area: sorvete4;
+      position: absolute;
+      padding-top: 15rem;
+    }
+
+    main div:nth-child(6) {
+      grid-area: sorvete5;
+      position: absolute;
+      padding-top: 25rem;
+      padding-left: 19rem;
+    }
+
+    main div:nth-child(7) {
+      grid-area: sorvete6;
+      position: absolute;
+      padding-top: 15rem;
+      padding-left: 38rem;
+    }
+
+    header {
+      width: 37.7rem;
+      height: 60rem;
+    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--bg-heading);
+    }
+    
+    header img {
+      width: 15.7rem;
+      height: 15.6rem;
+      margin-top: 3.2rem;
+    }
+
+    header h1 {
+      display: flex;
+      flex-direction: column;
+      
+      width: 100%;
+      height: 70px;
+      
+      color: #FFF;
+      text-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+      font-size: 4.8rem;
+      font-family: 'staatliches';
+      line-height: 3.4rem;
+      text-align: center;
+      justify-content: center;
+
+      background: #CBC0D3;
+    }
+
+    header p {
+      
+      color: #FFF;
+      font-size: 2.4rem;
+      font-family: 'Roboto';
+      line-height: 20px;
+      width: 27.5rem;
+      height: 26.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      margin-bottom: 12.5rem;
+    }
+
+    main .frase {
+      display: none;
+    }
+
+    .card {
+      width: 220px;
+      position: relative;
+      cursor: pointer;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h2{
+      font-family: "staatliches";
+      color: #4A4E69;
+      position: absolute;
+      top:1.7rem;
+      right: 3.9rem;
+      background-color: #FEEAFA;
+      border-radius: 2rem;
+      padding: 0.5rem 1.5rem;
+      letter-spacing: 1px;
+      animation: topdown 700ms 700ms backwards;
+      display: none;
+    }
+
+    div:nth-child(2){
+      width: 22rem;
+      height: 150px;
+      
+    }
+    
+    .card img{
+      width: 22rem;
+      height: auto;
+
+      padding: 0 3.2rem;
+      animation: downtop 700ms 350ms backwards;
+    }
+  }
+
+  main footer  {
+    width: 59.2rem;
+    color: #4A4E69;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: Open Sans;
+    line-height: 2.8rem;
+    margin:0 auto;
+    
+    padding-top: 47rem;
+    padding-right: 35rem;
+    }
+
+    main footer a {
+      text-decoration: none;
+      color: #4A4E69;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+  
